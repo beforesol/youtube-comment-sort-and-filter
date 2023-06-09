@@ -45,16 +45,14 @@ const sortByLike = () => {
 
       if (isScrollEnd) {
         clearInterval(id);
-        resolve();
+        resolve(commentList);
       } else {
         console.log(`${commentList.length}개의 댓글 파싱 중..`)
       }
     }, 1000);
   })
 
-  Promise.all([findCommentContainer, findAllCommentList]).then(() => {
-    const commentContainer = document.querySelector(COMMENT_CONTAINER_SELECTOR);
-    const commentList = document.querySelectorAll(COMMENT_SELECTOR);
+  Promise.all([findCommentContainer, findAllCommentList]).then(([commentContainer, commentList]) => {
     const orderByLike = Array.from(commentList).sort((a, b) => {
       return Number(b.querySelector(LIKE_COUNT_SELECTOR).textContent) - Number(a.querySelector(LIKE_COUNT_SELECTOR).textContent);
     })

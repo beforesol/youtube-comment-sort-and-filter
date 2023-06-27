@@ -4,14 +4,6 @@ const sortByLike = () => {
   const COMMENT_SELECTOR = 'ytd-comment-thread-renderer'
   const LIKE_COUNT_SELECTOR = '#vote-count-middle'
 
-  const YOUTUBE_WATCH_URL = 'www.youtube.com/watch'
-
-  const isYoutubeWatchPage = `${window.location.hostname}${window.location.pathname}` === YOUTUBE_WATCH_URL;
-  if (!isYoutubeWatchPage) {
-    alert('유튜브 재생 페이지에서 사용해주세요.');
-    return;
-  }
-
   const findCommentContainer = new Promise((resolve) => {
     let id;
     const animation = () => {
@@ -65,9 +57,8 @@ const sortByLike = () => {
   })
 }
 
-chrome.action.onClicked.addListener((tab) => {
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: sortByLike
-  });
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  if (message.action === 'getDOM') {
+    sortByLike();
+  }
 });

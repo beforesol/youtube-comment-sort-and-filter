@@ -1,10 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="./popup.css" />
-  </head>
-  <body>
-    <button id="btn">Click Me!</button>
-    <script src="./popup.js"></script>
-  </body>
+
+<head>
+    <title>youtube comment popup</title>
+    <link rel='stylesheet' type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather%3A900"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans%3A500%2C600"/>
+</head>
+
+<body>
+    <div class="popup_wrap">
+        <div class="title_wrap">
+            <div class="title">Filter youtube comment just for you</div>
+            <button class="close_btn"><span class="blind">삭제</span></button>
+        </div>
+        <form>
+            <div class="select_title">FILTER</div>
+            <ul class="list_set">
+                <li class="list">
+                    <input class="inputbox" type="checkbox" id="timeLine" name="filter" />
+                    <label class="menu" for="timeLine">Timeline</label>
+                </li>
+            </ul>
+            <div class="select_title">LANGUAGE</div>
+            <ul class="list_set">
+                <li class="list">
+                    <input class="inputbox" type="checkbox" id="ko" name="lang"/>
+                    <label class="menu" for="ko">Ko</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="checkbox" id="en" name="lang"/>
+                    <label class="menu" for="en">En</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="checkbox" id="zhChs" name="lang"/>
+                    <label class="menu" for="zhChs">Zh-Chs</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="checkbox" id="Ja" name="lang"/>
+                    <label class="menu" for="Ja">Ja</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="checkbox" id="Th" name="lang"/>
+                    <label class="menu" for="Th">Th</label>
+                </li>
+            </ul>
+            <div class="select_title">SORT</div>
+            <ul class="list_set">
+                <li class="list">
+                    <input class="inputbox" type="radio" id="default" name="sort"/>
+                    <label class="menu radio" for="default">Default</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="radio" id="new" name="sort"/>
+                    <label class="menu radio" for="new">New</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="radio" id="recommend" name="sort"/>
+                    <label class="menu radio" for="recommend">Recommend</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="radio" id="recommendCount" name="sort"/>
+                    <label class="menu radio" for="recommendCount">Recommend Count</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="radio" id="replyCount" name="sort"/>
+                    <label class="menu radio" for="replyCount">Reply Count</label>
+                </li>
+            </ul>
+            <div class="save_wrap">
+                <button class="reset">CLEAR</button>
+                <button class="submit">APPLY FILTERS</button>
+            </div>
+        </form>
+        <script src="/js/popup.js"></script>
+    </div>
+</body>
+
 </html>

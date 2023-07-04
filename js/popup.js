@@ -1,8 +1,5 @@
-const btn = document.querySelector('#btn')
+import MainController from "./controllers/MainController.js";
 
-btn.addEventListener('click', () => {
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    var tab = tabs[0];
-    chrome.tabs.sendMessage(tab.id, { action: 'getDOM' });
-  });
-});
+document.addEventListener('DOMContentLoaded', () => {
+    new MainController();
+})

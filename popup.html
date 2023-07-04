@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <div class="popup_wrap">
+    <div class="popup_wrap" id="popup">
         <div class="title_wrap">
             <div class="title">Filter youtube comment just for you</div>
-            <button class="close_btn"><span class="blind">삭제</span></button>
+            <button class="close_btn" data-button-type="close"><span class="blind">닫기</span></button>
         </div>
         <form>
             <div class="select_title">FILTER</div>
@@ -69,11 +69,11 @@
                 </li>
             </ul>
             <div class="save_wrap">
-                <button class="reset">CLEAR</button>
-                <button class="submit">APPLY FILTERS</button>
+                <button class="reset" data-button-type="clear">CLEAR</button>
+                <button class="submit" id="btn" data-button-type="apply">APPLY FILTERS</button>
             </div>
         </form>
-        <script src="/js/popup.js"></script>
+        <script type="module" src="/js/popup.js" ></script>
     </div>
 </body>
 

@@ -58,7 +58,9 @@ const sortByLike = () => {
 }
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  if (message.action === 'getDOM') {
-    sortByLike();
+  if (message.action === 'log') {
+    const receivedData = message.data;
+    // 수신된 데이터를 처리하는 로직 작성
+    console.log(receivedData);
   }
 });

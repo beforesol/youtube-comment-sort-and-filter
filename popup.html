@@ -15,14 +15,21 @@
             <button class="close_btn" data-button-type="close"><span class="blind">닫기</span></button>
         </div>
         <div class="loading" data-component="loading">
-            <span class="text">댓글 가져오는 중...</span>
+            <span class="text">fetch Comment...</span>
         </div>
         <form data-component="form">
-            <div class="select_title">SORT</div>
-            <ul class="list_set" data-filter="sort">
+            <div class="select_title">FILTER</div>
+            <ul class="list_set">
                 <li class="list">
-                    <input class="inputbox" type="radio" id="default" name="sort" checked />
-                    <label class="menu" for="default">Default</label>
+                    <input class="inputbox" type="checkbox" id="timeLine" name="filter" />
+                    <label class="menu" for="timeLine">Timeline</label>
+                </li>
+            </ul>
+            <div class="select_title">SORT</div>
+            <ul class="list_set">
+                <li class="list">
+                    <input class="inputbox" type="radio" id="default_sort" name="sort" checked />
+                    <label class="menu" for="default_sort">Default</label>
                 </li>
                 <li class="list">
                     <input class="inputbox" type="radio" id="recommendCount" name="sort" />
@@ -34,9 +41,13 @@
                 </li>
             </ul>
             <div class="select_title">LANGUAGE</div>
-            <ul class="list_set" data-filter="lang">
+            <ul class="list_set">
                 <li class="list">
-                    <input class="inputbox" type="radio" id="ko" name="lang" checked />
+                    <input class="inputbox" type="radio" id="default_lang" name="lang" checked />
+                    <label class="menu" for="default_lang">Default</label>
+                </li>
+                <li class="list">
+                    <input class="inputbox" type="radio" id="ko" name="lang" />
                     <label class="menu" for="ko">Ko</label>
                 </li>
                 <li class="list">
@@ -48,24 +59,17 @@
                     <label class="menu" for="zhChs">Zh-Chs</label>
                 </li>
                 <li class="list">
-                    <input class="inputbox" type="radio" id="Ja" name="lang" />
-                    <label class="menu" for="Ja">Ja</label>
+                    <input class="inputbox" type="radio" id="ja" name="lang" />
+                    <label class="menu" for="ja">Ja</label>
                 </li>
                 <li class="list">
-                    <input class="inputbox" type="radio" id="Th" name="lang" />
-                    <label class="menu" for="Th">Th</label>
-                </li>
-            </ul>
-            <div class="select_title">FILTER</div>
-            <ul class="list_set" data-filter="filter">
-                <li class="list">
-                    <input class="inputbox" type="checkbox" id="timeLine" name="filter" />
-                    <label class="menu" for="timeLine">Timeline</label>
+                    <input class="inputbox" type="radio" id="th" name="lang" />
+                    <label class="menu" for="th">Th</label>
                 </li>
             </ul>
             <div class="save_wrap">
-                <button class="reset" data-button-type="clear">CLEAR</button>
-                <button class="submit" id="btn" data-button-type="apply">APPLY FILTERS</button>
+                <button class="reset" data-button-type="clear" type="button">CLEAR</button>
+                <button class="submit" data-button-type="apply" type="button">APPLY FILTERS</button>
             </div>
         </form>
         <script type="module" src="/js/popup.js"></script>

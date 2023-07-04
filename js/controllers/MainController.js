@@ -11,12 +11,17 @@ class MainController {
     this.loadingView = new LoadingView(document.querySelector('[data-component="loading"]'))
 
     // Model
-    CommentModel.fetchComment('HO0AyUK-ASM').then(() => {
+    CommentModel.fetchComment('W0ap3thVqbo').then(() => {
       this.loadingView.hide()
       this.formView.show()
     })
 
     // Event
+    this.formView.on('@clear', () => {
+      CommentModel.clear();
+      this.render()
+    })
+
     this.formView.on('@apply', e => {
       CommentModel.filter(e.detail);
       this.render()

@@ -37,6 +37,10 @@ export default {
         throw error;
       });
   },
+  clear() {
+    this.data = this.originalData;
+    console.log(this.data)
+  },
   languageFilterCallback(comment, regex) {
     const text = comment.topLevelComment.snippet.textOriginal.trim();
     const characters = text.replace(regex, '');
@@ -91,6 +95,7 @@ export default {
         break;
     }
 
+    console.log(this.data)
     // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     //   const tab = tabs[0];
     //   chrome.tabs.sendMessage(tab.id, { action: 'log', data: this.data });

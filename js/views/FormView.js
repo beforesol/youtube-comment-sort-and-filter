@@ -15,7 +15,13 @@ class FormView extends View {
   }
 
   bindEvents() {
+    this.clearBtnEl.addEventListener('click', this.onClear.bind(this))
     this.applyBtnEl.addEventListener('click', this.onApply.bind(this))
+  }
+
+  onClear() {
+    this.el.reset();
+    this.emit('@clear')
   }
 
   onApply() {

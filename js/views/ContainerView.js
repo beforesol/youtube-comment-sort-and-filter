@@ -1,11 +1,9 @@
 import View from './View.js';
 
-class ButtonView extends View {
+class ContainerView extends View {
   constructor(el) {
     super(el);
     this.closeBtnEl = el.querySelector('[data-button-type="close"]');
-    this.clearBtnEl = el.querySelector('[data-button-type="clear"]');
-    this.applyBtnEl = el.querySelector('[data-button-type="apply"]');
 
     this.bindEvents();
     return this;
@@ -22,4 +20,4 @@ class ButtonView extends View {
   }
 }
 
-export default ButtonView;
+export default ContainerView;

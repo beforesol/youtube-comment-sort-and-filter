@@ -1,28 +1,26 @@
-import FormView from "../views/FormView.js";
-import ContainerView from '../views/ContainerView.js';
+import PopupView from "../views/PopupView.js";
 import CommentModel from '../models/CommentModel.js';
 import LoadingView from "../views/LoadingView.js";
 
 class MainController {
   constructor() {
     // View
-    this.containerView = new ContainerView(document.querySelector('[data-component="container"]'))
-    this.formView = new FormView(document.querySelector('[data-component="form"]'))
+    this.popupView = new PopupView(document.querySelector('[data-component="container"]'))
     this.loadingView = new LoadingView(document.querySelector('[data-component="loading"]'))
 
     // Model
     CommentModel.fetchComment('W0ap3thVqbo').then(() => {
       this.loadingView.hide()
-      this.formView.show()
+      this.popupView.show()
     })
 
     // Event
-    this.formView.on('@clear', () => {
+    this.popupView.on('@clear', () => {
       CommentModel.clear();
       this.render()
     })
 
-    this.formView.on('@apply', e => {
+    this.popupView.on('@apply', e => {
       CommentModel.filter(e.detail);
       this.render()
     })

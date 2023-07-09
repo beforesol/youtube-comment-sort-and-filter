@@ -2,16 +2,7 @@ body {
     width: 360px;
 }
 
-.blind {
-    overflow: hidden;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    clip: rect(0 0 0 0);
-}
-
-.popup_wrap {
+.popup_area {
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -19,19 +10,18 @@ body {
     box-sizing: border-box;
 }
 
-
-.title_wrap {
+.popup_area .title_wrap {
     display: flex;
     justify-content: space-between;
 }
 
-.title {
+.popup_area .title {
     font-size: 16px;
     font-weight: bold;
     font-family: Merriweather, 'Source Sans Pro';
 }
 
-.close_btn {
+.popup_area .close_btn {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -42,8 +32,7 @@ body {
     background-size: contain;
 }
 
-
-.loading {
+.popup_area .loading {
     display: flex;
     height: 337px;
     align-items: center;
@@ -51,7 +40,7 @@ body {
     color: rgb(121, 122, 137);
 }
 
-.text:before {
+.popup_area .loading .text:before {
     display: block;
     width: 20px;
     height: 20px;
@@ -61,7 +50,7 @@ body {
     content: '';
 }
 
-.select_title {
+.popup_area .select_title {
     margin-top: 24px;
     font-size: 12px;
     color: rgb(121, 122, 137);
@@ -69,7 +58,7 @@ body {
     font-family: IBM Plex Sans, 'Source Sans Pro';
 }
 
-.list_set {
+.popup_area .list_set {
     list-style-type: none;
     padding: 0;
     margin: 10px 0 0 0;
@@ -77,7 +66,7 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
-.list {
+.popup_area .list {
     position: relative;
     font-size: 12px;
     color: #1f223d;
@@ -85,19 +74,19 @@ body {
     font-family: IBM Plex Sans, 'Source Sans Pro';
 }
 
-.list:nth-child(n+3) {
+.popup_area .list:nth-child(n+3) {
     margin-top: 10px;
 }
 
-.inputbox {
+.popup_area .inputbox {
     display: none;
 }
 
-.menu {
+.popup_area .menu {
     padding-left: 22px;
 }
 
-.menu::after {
+.popup_area .menu::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -109,17 +98,17 @@ body {
     content: '';
 }
 
-.inputbox[type="radio"] + .menu::after {
+.popup_area .inputbox[type="radio"] + .menu::after {
     border-radius: 50%;
 }
 
-.inputbox:checked+.menu::after {
+.popup_area .inputbox:checked+.menu::after {
     background: url('/assets/img/check.png') no-repeat center;
     background-size: contain;
     background-color: rgb(66, 83, 112);
 }
 
-.save_wrap {
+.popup_area .save_wrap {
     margin-top: 35px;
     border-top: #e0eaf7 1px solid;
     padding: 35px 20px 0;
@@ -128,7 +117,7 @@ body {
 
 }
 
-.save_wrap .btn {
+.popup_area .save_wrap .btn {
     width: 140px;
     height: 40px;
     font-size: 12px;
@@ -138,12 +127,12 @@ body {
     font-family: IBM Plex Sans, 'Source Sans Pro';
 }
 
-.reset {
+.popup_area .reset {
     background-color: #fff;
     color: #1f223d;
 }
 
-.submit {
+.popup_area .submit {
     background-color: #ff0000;
     color: #fff;
 }

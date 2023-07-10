@@ -1,6 +1,7 @@
 import { API_KEY, YOUTUBE_COMMENT_API_URL } from '../contants/API.js';
 import { FILTER, LANGUAGE, SORT } from '../contants/filter.js';
-import { EN_REGEX, JA_REGEX, KO_REGEX, TH_REGEX, ZH_CHS_REGEX } from '../contants/regex.js';
+import { EN_REGEX, JA_REGEX, KO_REGEX, TH_REGEX, TIME_REGEX, ZH_CHS_REGEX } from '../contants/regex.js';
+import { CHROME_ACTION } from '../contants/action.js';
 
 const LANGUAGE_PERCENTAGE = 90;
 
@@ -51,9 +52,8 @@ export default {
     if (filter.includes(FILTER.TIMELINE)) {
       this.data = this.originalData.filter(comment => {
         const text = comment.topLevelComment.snippet.textOriginal.trim();
-        const pattern = /\d{2}:\d{2}:\d{2}/;
 
-        return pattern.test(text);
+        return TIME_REGEX.test(text);
       })
     } else {
       this.data = this.originalData

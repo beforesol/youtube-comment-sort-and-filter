@@ -1,3 +1,4 @@
+import { CHROME_ACTION } from '../contants/action.js';
 import { getPeriodTimeStringForClip } from '../utils/periodTime.js';
 import View from './View.js';
 
@@ -34,7 +35,7 @@ class CommentView extends View {
   goLink(anchorEl) {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       const tab = tabs[0];
-      chrome.tabs.sendMessage(tab.id, { action: CHROME_ACTION.TIMELINE, data: anchorEl.href });
+      chrome.tabs.sendMessage(tab.id, { action: CHROME_ACTION.LINK, data: anchorEl.href });
     });
   }
 

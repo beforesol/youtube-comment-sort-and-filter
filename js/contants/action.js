@@ -1,4 +1,4 @@
-const CHROME_ACTION = {
+export const CHROME_ACTION = {
   LOG: 'log',
-  TIMELINE: 'timeline'
+  LINK: 'linnk'
 }

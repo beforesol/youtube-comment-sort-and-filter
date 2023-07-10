@@ -1,3 +1,5 @@
+import { CHROME_ACTION } from './contants/action.js';
+
 // log
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message.action === CHROME_ACTION.LOG) {
@@ -9,7 +11,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 
 // timeline
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  if (message.action === CHROME_ACTION.TIMELINE) {
+  if (message.action === CHROME_ACTION.LINK) {
     const href = message.data;
 
     window.location.href = href

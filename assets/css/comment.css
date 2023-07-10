@@ -1,3 +1,13 @@
+.comment_area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 10;
+}
+
 .comment_area .header {
   position: relative;
   background-color: rgb(100, 181, 246);
@@ -18,7 +28,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
 }
 
@@ -34,8 +44,6 @@
 
 .comment_area .list {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .comment_area .list+.list {
@@ -80,13 +88,15 @@
 
 .comment_area .comment {
   font-size: 16px;
+  word-break: break-all;
+}
+
+.comment_area .comment.ellipsis {
   overflow: hidden;
-  white-space: normal;
   text-overflow: clip;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  word-break: break-all;
 }
 
 .comment_area .more_btn {
@@ -121,7 +131,7 @@
   display: flex;
 }
 
-.comment_area .score + .score {
+.comment_area .score+.score {
   margin-left: 5px;
 }
 
@@ -140,12 +150,12 @@
   height: 18px;
 }
 
-.comment_area .score_thumb.like{
+.comment_area .score_thumb.like {
   background: url('/assets/img/like.png') no-repeat center;
   background-size: contain;
 }
 
-.comment_area .score_thumb.reply{
+.comment_area .score_thumb.reply {
   background: url('/assets/img/reply.png') no-repeat center;
   background-size: contain;
 }

@@ -12,13 +12,14 @@
 
 <body>
     <!-- popup -->
-    <div class="popup_area" data-component="container">
+    <div class="loading" data-component="loading">
+        <span class="text">fetch Comment...</span>
+    </div>
+    <!-- popup -->
+    <div class="popup_area" data-component="popup">
         <div class="title_wrap">
             <div class="title">Filter youtube comment just for you</div>
             <button class="close_btn" data-button-type="close"><span class="blind">close</span></button>
-        </div>
-        <div class="loading" data-component="loading">
-            <span class="text">fetch Comment...</span>
         </div>
         <form>
             <div class="select_title">FILTER</div>
@@ -78,70 +79,12 @@
         <script type="module" src="/js/popup.js"></script>
     </div>
     <!-- comments -->
-    <div class="comment_area" style="display: none">
+    <div class="comment_area" data-component="comment">
         <div class="header">
-            <button class="back_btn"><span class="blind">go back</span></button>
+            <button class="back_btn" data-button-type="back"><span class="blind">go back</span></button>
             <div class="title">Comments</div>
         </div>
-        <ul class="list_set">
-            <li class="list">
-                <div class="user_img_thumb">
-                    <img class="user_img" src='/assets/img/user_img.png'>
-                </div>
-                <div class="user_comment_wrap">
-                    <div>
-                        <span class="user_name">cho won bin</span>
-                        <span class="past_time">2 hours ago</span>
-                    </div>
-                    <div class="comment_wrap">
-                        <p class="comment">Kimchi stew is a hearty and comforting Korean dish that's perfect
-                            for cold winter nights.
-                            The spicy broth and tender chunks of pork belly and kimchi make for a delicious and
-                            satisfying meal.</p>
-                        <button class="more_btn"><span class="text">...more</span></button>
-                    </div>
-
-                    <div class="score_area">
-                        <div class="score">
-                            <span class="score_thumb like"><span class="blind">like</span></span>
-                            <span class="score_num">283</span>
-                        </div>
-                        <div class="score">
-                            <span class="score_thumb reply"><span class="blind">like</span></span>
-                            <span class="score_num">283</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="list">
-                <div class="user_img_thumb">
-                    <img class="user_img" src='/assets/img/user_img.png'>
-                </div>
-                <div class="user_comment_wrap">
-                    <div>
-                        <span class="user_name">sol</span>
-                        <span class="past_time">2 hours ago</span>
-                    </div>
-                    <div class="comment_wrap">
-                        <p class="comment">This traditional Korean stew is a perfect balance of salty, spicy, and
-                            sour flavors. It's a great way to use up leftover kimchi, and can be customized to your
-                            liking with different proteins and vegetables.</p>
-                        <button class="more_btn"><span class="text">...more</span></button>
-                    </div>
-
-                    <div class="score_area">
-                        <div class="score">
-                            <span class="score_thumb like"><span class="blind">like</span></span>
-                            <span class="score_num">283</span>
-                        </div>
-                        <div class="score">
-                            <span class="score_thumb reply"><span class="blind">like</span></span>
-                            <span class="score_num">283</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <ul class="list_set" data-component="comment-container"></ul>
     </div>
 </body>
 

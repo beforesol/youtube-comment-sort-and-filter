@@ -1,7 +1,6 @@
 import { API_KEY, YOUTUBE_COMMENT_API_URL } from '../contants/API.js';
 import { FILTER, LANGUAGE, SORT } from '../contants/filter.js';
 import { EN_REGEX, JA_REGEX, KO_REGEX, TH_REGEX, TIME_REGEX, ZH_CHS_REGEX } from '../contants/regex.js';
-import { CHROME_ACTION } from '../contants/action.js';
 
 const LANGUAGE_PERCENTAGE = 90;
 
@@ -23,7 +22,7 @@ export default {
         this.originalData.push(...data.items.map(item => item.snippet));
         // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         //   const tab = tabs[0];
-        //   chrome.tabs.sendMessage(tab.id, { action: CHROME_ACTION.LOG, data });
+        //   chrome.tabs.sendMessage(tab.id, { action: 'log', data });
         // });
 
         const nextPageToken = data.nextPageToken;
@@ -96,7 +95,7 @@ export default {
 
     // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     //   const tab = tabs[0];
-    //   chrome.tabs.sendMessage(tab.id, { action: CHROME_ACTION.LOG, data: this.data });
+    //   chrome.tabs.sendMessage(tab.id, { action: 'log' data: this.data });
     // });
   },
 };

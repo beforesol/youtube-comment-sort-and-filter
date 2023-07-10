@@ -21,13 +21,15 @@ class PopupView extends View {
   }
 
   onClose = () => {
-    chrome.extension.getViews({ type: 'popup' }).forEach(function(view) {
+    chrome.extension.getViews({ type: 'popup' }).forEach(function (view) {
       view.close();
     });
   }
 
   onClear = () => {
-    this.el.reset();
+    const form = this.el.querySelector('form');
+
+    form.reset();
     this.emit('@clear')
   }
 

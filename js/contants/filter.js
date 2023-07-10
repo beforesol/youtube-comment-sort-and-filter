@@ -1,5 +1,5 @@
 export const FILTER = {
-  TIMELINE: 'timeLine',
+  TIMELINE: 'timeline',
 }
 
 export const SORT = {

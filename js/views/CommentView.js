@@ -24,19 +24,36 @@ class CommentView extends View {
     this.hide()
   }
 
-  removeEllipsis(e) {
-    const moreBtnEl = e.target.closest('[data-button-type="more-btn"]');
+  removeEllipsis(moreBtnEl) {
+    const commentEl = moreBtnEl?.previousElementSibling
 
-    if (moreBtnEl) {
-      const commentEl = moreBtnEl?.previousElementSibling
+    moreBtnEl.remove()
+    commentEl.classList.remove('ellipsis')
+  }
 
-      moreBtnEl.remove()
-      commentEl.classList.remove('ellipsis')
-    }
+  goLink(anchorEl) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      const tab = tabs[0];
+      chrome.tabs.sendMessage(tab.id, { action: CHROME_ACTION.TIMELINE, data: anchorEl.href });
+    });
   }
 
   onClick = (e) => {
-    this.removeEllipsis(e);
+    e.preventDefault()
+
+    const target = e.target;
+    const moreBtnEl = target.closest('[data-button-type="more-btn"]');
+    const anchorEl = target.closest('a');
+
+    if (moreBtnEl) {
+      this.removeEllipsis(moreBtnEl)
+      return
+    }
+
+    if (anchorEl) {
+      this.goLink(anchorEl)
+      return
+    }
   }
 
   getCommentsHtml = (data) => {
@@ -85,7 +102,7 @@ class CommentView extends View {
         const moreBtn = document.createElement('button')
         moreBtn.classList.add('more_btn')
         moreBtn.innerHTML = '<span class="text">...more</span>'
-        moreBtn.dataset.buttonType="more-btn"
+        moreBtn.dataset.buttonType = "more-btn"
 
         comment.classList.add('ellipsis');
         comment.parentNode.append(moreBtn);

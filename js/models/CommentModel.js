@@ -20,10 +20,9 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         this.originalData.push(...data.items.map(item => item.snippet));
-        console.log(data)
         // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         //   const tab = tabs[0];
-        //   chrome.tabs.sendMessage(tab.id, { action: 'log', data });
+        //   chrome.tabs.sendMessage(tab.id, { action: CHROME_ACTION.LOG, data });
         // });
 
         const nextPageToken = data.nextPageToken;
@@ -95,10 +94,9 @@ export default {
         break;
     }
 
-    console.log(this.data)
     // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     //   const tab = tabs[0];
-    //   chrome.tabs.sendMessage(tab.id, { action: 'log', data: this.data });
+    //   chrome.tabs.sendMessage(tab.id, { action: CHROME_ACTION.LOG, data: this.data });
     // });
   },
 };

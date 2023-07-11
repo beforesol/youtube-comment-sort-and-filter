@@ -1,8 +1,8 @@
 {
-  "name": "Youtube Comment Sort By Like",
+  "name": "Youtube Comment Sort And Filter",
   "manifest_version": 3,
   "version": "1",
-  "description": "Youtube Comment Sort By Like",
+  "description": "Youtube 댓글 입맛대로 정렬 및 필터링(Custom Sorting and Filtering of YouTube Comments)",
   "permissions": [
     "tabs",
     "scripting"

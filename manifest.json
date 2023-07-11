@@ -4,6 +4,7 @@
   "version": "1",
   "description": "Youtube Comment Sort By Like",
   "permissions": [
+    "tabs",
     "scripting"
   ],
   "action": {

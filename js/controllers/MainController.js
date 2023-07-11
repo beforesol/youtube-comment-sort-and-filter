@@ -4,14 +4,14 @@ import LoadingView from "../views/LoadingView.js";
 import CommentView from '../views/CommentView.js';
 
 class MainController {
-  constructor() {
+  constructor(videoId) {
     // View
     this.loadingView = new LoadingView(document.querySelector('[data-component="loading"]'))
     this.popupView = new PopupView(document.querySelector('[data-component="popup"]'))
     this.commentView = new CommentView(document.querySelector('[data-component="comment"]'))
 
     // Model
-    CommentModel.fetchComment('W0ap3thVqbo').then(() => {
+    CommentModel.fetchComment(videoId).then(() => {
       this.loadingView.hide()
       this.popupView.show()
     })

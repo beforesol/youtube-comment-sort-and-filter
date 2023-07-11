@@ -4,8 +4,7 @@
   "version": "1",
   "description": "Youtube 댓글 입맛대로 정렬 및 필터링(Custom Sorting and Filtering of YouTube Comments)",
   "permissions": [
-    "tabs",
-    "scripting"
+    "tabs"
   ],
   "action": {
     "default_icon": "./assets/img/favicon.png",

@@ -4,7 +4,7 @@ export const FILTER = {
 
 export const SORT = {
   DEFAULT: 'default',
-  RECOMMEND_COUNT: 'recommendCount',
+  LIKE_COUNT: 'likeCount',
   REPLY_COUNT: 'replyCount',
 }
 

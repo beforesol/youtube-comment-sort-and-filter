@@ -61,7 +61,7 @@ export default {
     switch (sort) {
       case SORT.DEFAULT:
         break;
-      case SORT.RECOMMEND_COUNT:
+      case SORT.LIKE_COUNT:
         this.data = this.data.sort((a, b) => b.topLevelComment.snippet.likeCount - a.topLevelComment.snippet.likeCount)
         break;
       case SORT.REPLY_COUNT:

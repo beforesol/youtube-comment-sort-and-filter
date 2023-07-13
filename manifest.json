@@ -6,6 +6,9 @@
   "permissions": [
     "tabs"
   ],
+  "host_permissions": [
+    "*://youtube.com/*"
+  ],
   "action": {
     "default_icon": "./assets/img/favicon.png",
     "default_popup": "./html/popup.html"

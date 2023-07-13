@@ -1,7 +1,7 @@
 import { getPeriodTimeStringForClip } from '../utils/periodTime.js';
 import View from './View.js';
 
-const ELLIPSIS_HEIGHT = 78;
+const ELLIPSIS_HEIGHT = 72;
 
 class CommentView extends View {
   constructor(el) {

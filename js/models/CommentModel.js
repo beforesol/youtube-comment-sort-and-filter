@@ -2,7 +2,7 @@ import { API_KEY, YOUTUBE_COMMENT_API_URL } from '../contants/API.js';
 import { FILTER, LANGUAGE, SORT } from '../contants/filter.js';
 import { EN_REGEX, JA_REGEX, KO_REGEX, TH_REGEX, TIME_REGEX, ZH_CHS_REGEX } from '../contants/regex.js';
 
-const LANGUAGE_PERCENTAGE = 90;
+const LANGUAGE_PERCENTAGE = 60;
 
 export default {
   originalData: [],
